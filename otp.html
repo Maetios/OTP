@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verifica OTP</title>
+</head>
+<body>
+    <h1>Verifica OTP</h1>
+    {% if error %}
+    <p style="color: red;">Codice OTP non valido. Riprova.</p>
+    {% endif %}
+    <form method="post" action="/verify-otp">
+        <input type="hidden" name="username" value="{{ username }}">
+        <label for="otp">Inserisci il codice OTP:</label>
+        <input type="text" id="otp" name="otp" required><br><br>
+        <input type="submit" value="Verifica">
+    </form>
+</body>
+</html>
